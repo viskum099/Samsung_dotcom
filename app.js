@@ -28,6 +28,17 @@
     toast.timer = setTimeout(() => element.classList.remove('show'), 2400);
   }
 
+  function downloadFile(filename, contents, type) {
+    const url = URL.createObjectURL(new Blob([contents], { type }));
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.append(link);
+    link.click();
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
   function setEmpty(container, icon, title, detail) {
     container.innerHTML = `<div class="empty-state"><span class="empty-icon">${icon}</span><b>${title}</b><span>${detail}</span></div>`;
   }
@@ -97,12 +108,7 @@
   });
 
   $('#export-button').addEventListener('click', () => {
-    const blob = new Blob([JSON.stringify({ exportedAt: new Date().toISOString(), ...data }, null, 2)], { type: 'application/json' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'product-audience-trend-research.json';
-    link.click();
-    URL.revokeObjectURL(link.href);
+    downloadFile('product-audience-trend-research.json', JSON.stringify({ exportedAt: new Date().toISOString(), ...data }, null, 2), 'application/json');
     toast('Research data exported.');
   });
 
@@ -114,12 +120,7 @@
     ];
     const csvCell = (value) => `"${String(value ?? '').replace(/"/g, '""')}"`;
     const csv = [columns.join(','), ...rows.map((row) => columns.map((column) => csvCell(row[column])).join(','))].join('\r\n');
-    const blob = new Blob(['\ufeff', csv], { type: 'text/csv;charset=utf-8' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'product-audience-trend-research.csv';
-    link.click();
-    URL.revokeObjectURL(link.href);
+    downloadFile('product-audience-trend-research.csv', `\ufeff${csv}`, 'text/csv;charset=utf-8');
     toast('Research CSV exported.');
   });
 

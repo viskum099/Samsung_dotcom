@@ -32,7 +32,10 @@
     document.querySelector('#sticky-model').textContent = current.name;
     document.querySelector('#source-note').textContent = current.sources;
     const detailLink = document.querySelector('#detail-link');
-    if (detailLink) detailLink.href = `project-detail.html?product=${encodeURIComponent(current.id)}`;
+    if (detailLink) {
+      const detailPage = location.pathname.toLowerCase().includes('/public/') ? 'project-detail.html' : 'public/project-detail.html';
+      detailLink.href = `${detailPage}?product=${encodeURIComponent(current.id)}`;
+    }
     buildFeatures();
     buildPersonas();
     buildFaqs();

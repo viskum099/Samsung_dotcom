@@ -139,7 +139,6 @@ def index_csv(csv_path: Path, db_path: Path, model_name: str, include_editorial:
     vectors = model.encode_document(documents, normalize_embeddings=True, show_progress_bar=True)
 
     collection = get_collection(db_path)
-    # Rebuild this dataset slice so deleted or changed CSV rows do not remain stale.
     collection.delete(where={"dataset": csv_path.name})
     collection.upsert(
         ids=[record["id"] for record in records],

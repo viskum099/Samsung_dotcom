@@ -1,4 +1,3 @@
-/* Static product content: sourced fields and research summaries kept separate. */
 window.PRODUCTS = [
   {
     id: 'galaxy-s26-ultra', name: 'Galaxy S26 Ultra', tier: 'FLAGSHIP · GALAXY S SERIES',
