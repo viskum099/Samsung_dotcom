@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6f8">
+  <meta name="description" content="A responsive Samsung Dotcom product-page concept for Galaxy S26 Ultra and Galaxy A56 5G.">
+  <title>Samsung Dotcom · Galaxy Mobile</title>
+  <link rel="stylesheet" href="promo.css">
+  <script src="products.js" defer></script>
+  <script src="promo.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="Samsung Dotcom home">SAMSUNG <span>DOTCOM</span><small>CONCEPT PRODUCT PAGE</small></a>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="#models">Galaxy models</a><a href="#features">Features</a><a href="#compare">Compare</a><a href="#faq">FAQs</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow" id="hero-tier"></p>
+        <h1 id="hero-title"></h1>
+        <p class="hero-lede" id="hero-description"></p>
+        <div class="hero-actions"><a class="button button-primary" href="#features">Explore features <span aria-hidden="true">↓</span></a><a class="text-link" id="detail-link" href="project-detail.html">View product details <span aria-hidden="true">→</span></a></div>
+        <p class="hero-note">Product information is presented as a course prototype. No purchase or offer is implied.</p>
+      </div>
+      <div class="hero-device-wrap" role="img" aria-label="Neutral CSS device illustration, not product photography">
+        <div class="device-halo"></div><div class="device-back"><div class="device-camera camera-one"></div><div class="device-camera camera-two"></div><div class="device-camera camera-three"></div><div class="device-flash"></div></div>
+        <div class="device-front"><div class="device-screen"><span class="screen-clock">09:41</span><span class="screen-orbit"></span><span class="screen-caption">GALAXY<br><b id="screen-model"></b></span></div><span class="device-island"></span></div>
+        <span class="render-caption">ILLUSTRATIVE DEVICE PLACEHOLDER · NOT PRODUCT PHOTOGRAPHY</span>
+      </div>
+      <div class="hero-meta"><span>GALAXY MOBILE · INDIA</span><span>PRODUCT STORY <b id="hero-number">01</b> / 02</span></div>
+    </section>
+
+    <section class="model-section" id="models" aria-labelledby="models-title">
+      <div class="section-heading"><div><p class="eyebrow">CHOOSE YOUR GALAXY</p><h2 id="models-title">Two ways to find your fit.</h2></div><p>Select a model to update product details, feature mapping and audience messaging.</p></div>
+      <div class="model-picker" id="model-picker" role="tablist" aria-label="Samsung Galaxy model"></div>
+    </section>
+
+    <section class="spec-band" aria-label="Key product specifications"><div><small>DISPLAY</small><strong id="spec-display"></strong></div><div><small>MAIN CAMERA</small><strong id="spec-camera"></strong></div><div><small>BATTERY</small><strong id="spec-battery"></strong></div><div><small>SOFTWARE SUPPORT</small><strong id="spec-support"></strong></div></section>
+
+    <section class="section feature-section" id="features" aria-labelledby="features-title">
+      <div class="section-heading"><div><p class="eyebrow">TREND-TO-SPEC MAPPING</p><h2 id="features-title">Features with a reason to matter.</h2></div><p>Each card connects a customer signal to an exact product detail and a qualified marketing hook.</p></div>
+      <div class="feature-layout"><div class="feature-grid" id="feature-grid" role="tablist" aria-label="Mapped product trends"></div><article class="feature-detail" id="feature-detail" aria-live="polite"></article></div>
+      <p class="evidence-note">Customer signals are directional summaries from a small, non-representative evidence sample. Product claims should be checked against current model-specific terms before publication.</p>
+    </section>
+
+    <section class="audience-section" id="audiences" aria-labelledby="audience-title">
+      <div class="section-heading"><div><p class="eyebrow">AUDIENCE-CENTRED STORY</p><h2 id="audience-title">Start with the way you use it.</h2></div><p>Audience messaging changes with the selected Galaxy model.</p></div>
+      <div class="persona-tabs" id="persona-tabs" role="tablist" aria-label="Audience persona"></div>
+      <article class="persona-panel" id="persona-panel" aria-live="polite"></article>
+    </section>
+
+    <section class="section compare-section" id="compare" aria-labelledby="compare-title">
+      <div class="section-heading"><div><p class="eyebrow">SIDE-BY-SIDE</p><h2 id="compare-title">Compare the details.</h2></div><p>Select the models you want to see in the comparison table.</p></div>
+      <div class="compare-selectors" id="compare-selectors"></div>
+      <div class="compare-table-wrap" id="compare-table-wrap" aria-live="polite"></div>
+      <p class="evidence-note">Specifications shown here are sourced from Samsung India product pages. This concept has no live price, trade-in or student-offer data.</p>
+    </section>
+
+    <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+      <div class="faq-intro"><p class="eyebrow">CLEAR ANSWERS</p><h2 id="faq-title">Before you decide.</h2><p>Answers reflect the selected model and the evidence currently available in the project.</p></div>
+      <div class="faq-list" id="faq-list"></div>
+    </section>
+
+    <section class="closing-cta"><p class="eyebrow">SAMSUNG DOTCOM · CONCEPT</p><h2>Choose with <em>confidence.</em></h2><p>Compare the models and review the product details that matter to you.</p><a class="button button-light" href="#compare">Compare Galaxy models <span aria-hidden="true">↓</span></a></section>
+    <section class="sources"><p class="eyebrow">SOURCE & CLAIM NOTE</p><p id="source-note"></p><p>Customer commentary is paraphrased. No customer name or unapproved verbatim testimonial is used. This static page does not navigate to Samsung or submit personal information.</p><a href="../research.html">Open the research workspace ↗</a></section>
+  </main>
+  <aside class="conversion-bar" aria-label="Product comparison action"><div class="conversion-product"><span class="conversion-dot"></span><span><b id="sticky-model"></b><small>Compare model specifications</small></span></div><a class="button button-primary" href="#compare">Compare models <span aria-hidden="true">↓</span></a></aside>
+  <footer class="site-footer"><a class="footer-brand" href="index.html">SAMSUNG DOTCOM</a><p>Independent course concept. Samsung marks and product names identify referenced products; this is not an official Samsung website.</p><div class="footer-links"><a href="../research.html">Research workspace</a><a href="../README.md">Project notes</a></div></footer>
+</body>
+</html>

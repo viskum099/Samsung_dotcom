@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A research workspace for customer profiles, sourced market trends, and evidence-based product page hooks.">
+  <title>Product Audience & Trend Mapper</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Samsung research workspace home"><span class="brand-mark">S</span><span>SAMSUNG <small>PRODUCT RESEARCH</small></span></a>
+    <div class="topbar-note"><span class="status-dot"></span> Research workspace <span class="divider">|</span> <span id="save-status">Saved on this device</span></div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">PROMOTIONAL PAGE PLANNING</p>
+        <h1>Turn customer evidence<br>into product page hooks.</h1>
+        <p class="intro">Capture who the product serves, what is changing in the market, and which verified product specifications make a useful promise.</p>
+        <div class="hero-actions"><button class="button button-dark" data-scroll="customer-form">Add customer profile</button><button class="button button-light" data-scroll="trend-form">Map a trend</button></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="art-core">RESEARCH<br><b>→</b><br>HOOK</div><span class="art-tag tag-one">CUSTOMER</span><span class="art-tag tag-two">TREND</span><span class="art-tag tag-three">SPEC</span></div>
+    </section>
+
+    <section class="metric-grid" aria-label="Research summary">
+      <article class="metric"><span class="metric-label">CUSTOMER PROFILES</span><strong id="profile-count">0</strong><span>Evidence-backed segments</span></article>
+      <article class="metric"><span class="metric-label">TRENDS CAPTURED</span><strong id="trend-count">0</strong><span>With source and date</span></article>
+      <article class="metric"><span class="metric-label">SPEC MAPPINGS</span><strong id="mapping-count">0</strong><span>Trend → product connection</span></article>
+      <article class="metric metric-highlight"><span class="metric-label">READY-TO-REVIEW HOOKS</span><strong id="hook-count">0</strong><span>Drafts based on entered evidence</span></article>
+    </section>
+
+    <section class="section-block" id="customer-section">
+      <div class="section-heading"><div><p class="eyebrow">01 / CUSTOMER PROFILES</p><h2>Who are we speaking to?</h2><p class="section-desc">Record a segment using observed or sourced evidence. Separate what you know from what still needs validation.</p></div><span class="step-chip">USE CASE · PAIN POINT · PRICE</span></div>
+      <form id="customer-form" class="form-card">
+        <div class="form-heading"><div><span class="number-badge">01</span><h3>Build a customer profile</h3></div><span class="required-note">* Required fields</span></div>
+        <div class="form-grid">
+          <label>Segment / profile name *<input name="name" required placeholder="e.g. Segment name from your research"></label>
+          <label>Research source<input name="source" placeholder="Interview, survey, report, URL…"></label>
+          <label class="span-two">Use case *<textarea name="useCase" required rows="2" placeholder="What are they trying to do? Include context or frequency."></textarea></label>
+          <label class="span-two">Pain point *<textarea name="painPoint" required rows="2" placeholder="What gets in the way? What evidence supports this?"></textarea></label>
+          <label>Willingness to pay *<input name="willingness" required placeholder="Range, threshold, or unknown + evidence"></label>
+          <label>Evidence / confidence<input name="confidence" placeholder="Sample size, quote reference, confidence level…"></label>
+          <label class="span-two">Additional needs or buying factors<textarea name="needs" rows="2" placeholder="Accessibility, ecosystem, style, durability, etc. Only enter supported findings."></textarea></label>
+        </div>
+        <div class="form-footer"><p>Do not enter personally identifying customer information.</p><button class="button button-dark" type="submit">Save profile <span>＋</span></button></div>
+      </form>
+      <div class="content-heading"><h3>Captured profiles</h3><span id="profile-subtitle">No profiles added yet</span></div>
+      <div class="card-list" id="profile-list"><div class="empty-state"><span class="empty-icon">◎</span><b>Your profile evidence will appear here.</b><span>Start with one clearly defined customer segment.</span></div></div>
+    </section>
+
+    <section class="section-block trend-section" id="trend-section">
+      <div class="section-heading"><div><p class="eyebrow">02 / TREND → SPEC → HOOK</p><h2>Make the connection clear.</h2><p class="section-desc">A trend alone is not a product claim. Map it to a verified specification and explain why that spec matters to a particular customer.</p></div><span class="step-chip">SOURCE → SIGNAL → SPEC</span></div>
+      <div class="workflow"><div><span>1</span><b>Trend evidence</b><small>What is changing?</small></div><i>→</i><div><span>2</span><b>Product specification</b><small>What can the product do?</small></div><i>→</i><div><span>3</span><b>Customer benefit</b><small>Why should they care?</small></div><i>→</i><div><span>4</span><b>Marketing hook</b><small>What can the page say?</small></div></div>
+      <form id="trend-form" class="form-card">
+        <div class="form-heading"><div><span class="number-badge">02</span><h3>Map a sourced trend to a product spec</h3></div><span class="required-note">* Required fields</span></div>
+        <div class="form-grid">
+          <label>Trend / customer signal *<input name="trend" required placeholder="Describe the observed trend, without overstating it"></label>
+          <label>Trend category<select name="category"><option value="Usage behavior">Usage behavior</option><option value="Technology">Technology</option><option value="Design & lifestyle">Design & lifestyle</option><option value="Value & pricing">Value & pricing</option><option value="Sustainability">Sustainability</option><option value="Other">Other</option></select></label>
+          <label>Source / URL *<input name="source" required placeholder="Report, survey, article, URL…"></label>
+          <label>Published / observed date *<input name="date" required type="date"></label>
+          <label class="span-two">Evidence summary *<textarea name="evidence" required rows="2" placeholder="What does the source actually report? Add geography or sample context if available."></textarea></label>
+          <label>Product specification *<input name="spec" required placeholder="Exact, verified spec from the product brief"></label>
+          <label>Spec evidence / source *<input name="specSource" required placeholder="Official product page, approved product brief, datasheet…"></label>
+          <label class="span-two">Customer benefit *<textarea name="benefit" required rows="2" placeholder="Explain the relevance to a specific use case or pain point."></textarea></label>
+          <label>Relevant customer profile<select name="profileId" id="profile-select"><option value="">Select a saved profile (optional)</option></select></label>
+          <label>Claim review status<select name="review"><option value="Draft — needs review">Draft — needs review</option><option value="Evidence checked">Evidence checked</option><option value="Approved for page">Approved for page</option></select></label>
+          <label class="span-two">Marketing hook draft<input name="hook" placeholder="Optional. If blank, a draft is assembled from the evidence above."></label>
+        </div>
+        <div class="form-footer"><p>Every hook remains a draft until claims and sources are reviewed.</p><button class="button button-dark" type="submit">Save trend mapping <span>＋</span></button></div>
+      </form>
+      <div class="content-heading"><h3>Trend mapping board</h3><span id="trend-subtitle">No trend mappings added yet</span></div>
+      <div class="card-list" id="trend-list"><div class="empty-state"><span class="empty-icon">↗</span><b>No trend claims have been entered.</b><span>Add a dated source and an exact product specification to begin.</span></div></div>
+    </section>
+
+    <section class="method-note"><div class="method-symbol">i</div><div><b>Research integrity built in</b><p>This workspace does not fetch or verify market research automatically. Enter source details and product specifications from approved materials. Hooks are working drafts; review evidence, claim substantiation, and regional requirements before publishing.</p></div></section>
+  </main>
+  <footer><span>PRODUCT AUDIENCE & TREND MAPPER</span><span>Research first. Claims with evidence.</span><div><button id="export-csv-button" class="text-button">Export CSV</button><button id="export-button" class="text-button">Export JSON</button><button id="clear-button" class="text-button danger">Clear all</button></div></footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
